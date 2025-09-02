@@ -1,0 +1,124 @@
+.new-cycle-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.loading-container, .no-devices {
+  text-align: center;
+  padding: 40px 20px;
+
+  p {
+    margin-top: 16px;
+    color: #666;
+  }
+}
+
+.no-devices {
+  mat-icon {
+    font-size: 48px;
+    height: 48px;
+    width: 48px;
+    color: #ff9800;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    color: #333;
+    margin-bottom: 8px;
+  }
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+// Add extra top space for name field
+.name-field {
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+// Reduce space between device field and selected details
+.device-field {
+  margin-bottom: 12px;
+}
+
+.selected-device-info {
+  margin-top: 8px;
+  margin-bottom: 24px; // Add more bottom space
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+
+  h4 {
+    margin: 0 0 16px 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.device-details {
+  .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 8px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    mat-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+      color: #666;
+    }
+
+    span {
+      font-size: 14px;
+      color: #333;
+    }
+  }
+}
+
+// Clean dropdown options - just show device names
+::ng-deep .mat-mdc-select-panel {
+  .mat-mdc-option {
+    height: 48px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+
+    .mat-mdc-option-text {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+  }
+}
+
+::ng-deep .mat-mdc-dialog-content {
+  padding-bottom: 32px; // Extra bottom space for dialog content
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+::ng-deep .mat-mdc-dialog-actions {
+  padding: 16px 24px;
+  justify-content: flex-end;
+  gap: 12px;
+
+  button {
+    min-width: 100px;
+
+    mat-spinner {
+      margin-right: 8px;
+    }
+
+    &[disabled] {
+      opacity: 0.6;
+    }
+  }
+}

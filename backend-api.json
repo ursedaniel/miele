@@ -84,6 +84,16 @@
       "deviceId": "48565",
       "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
       "startedAt": "2025-08-31T13:00:03.770Z",
+      "stoppedAt": "2025-09-02T15:26:32.071Z",
+      "status": "completed",
+      "invoiceLines": []
+    },
+    {
+      "id": "a847",
+      "userId": "charles",
+      "deviceId": "48111",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "startedAt": "2025-09-02T15:34:05.553Z",
       "stoppedAt": null,
       "status": "in-progress",
       "invoiceLines": []

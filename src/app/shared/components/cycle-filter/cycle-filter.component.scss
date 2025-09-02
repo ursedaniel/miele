@@ -1,0 +1,218 @@
+.filter-container {
+    margin-bottom: 20px;
+  }
+  
+  .filter-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    mat-card-content {
+      padding: 20px;
+    }
+  }
+  
+  .filter-header {
+    margin-bottom: 20px;
+  
+    h3 {
+      margin: 0 0 12px 0;
+      color: #333;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  
+    .filter-summary {
+      margin-top: 8px;
+  
+      mat-chip-set {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+  
+        mat-chip {
+          background-color: #1976d2;
+          color: white;
+          font-size: 12px;
+  
+          button[matChipRemove] {
+            color: white;
+            opacity: 0.8;
+  
+            &:hover {
+              opacity: 1;
+            }
+  
+            mat-icon {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .filter-controls {
+    .show-all {
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      transition: all 0.2s ease;
+  
+      &.active {
+        border-color: #1976d2;
+        background-color: #f3f9ff;
+      }
+  
+      &:hover {
+        border-color: #ccc;
+      }
+    }
+  
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+      margin: 16px 0;
+    }
+  
+    .status-filters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 8px;
+    }
+  }
+  
+  .filter-option {
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  
+    &.active {
+      background-color: #e3f2fd;
+    }
+  
+    ::ng-deep .mat-checkbox {
+      width: 100%;
+  
+      .mat-checkbox-layout {
+        width: 100%;
+        white-space: nowrap;
+      }
+    }
+  
+    .option-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+  
+      mat-icon {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+        transition: color 0.2s ease;
+      }
+  
+      .option-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+  
+        .label {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 1.2;
+          color: #333;
+        }
+  
+        .count {
+          font-size: 12px;
+          background-color: #f0f0f0;
+          color: #666;
+          padding: 2px 8px;
+          border-radius: 12px;
+          margin-top: 2px;
+          transition: all 0.2s ease;
+          min-width: 20px;
+          text-align: center;
+  
+          &:not(:empty) {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+  
+  .filter-actions {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: flex-end;
+  
+    button {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: #666;
+  
+      &:hover {
+        color: #333;
+      }
+  
+      mat-icon {
+        font-size: 18px;
+      }
+    }
+  }
+  
+  // Responsive design
+  @media (max-width: 768px) {
+    .filter-controls {
+      .status-filters {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    .filter-header {
+      .filter-summary mat-chip-set {
+        justify-content: flex-start;
+      }
+    }
+  }
+  
+  // Custom checkbox styling for better visual hierarchy
+  ::ng-deep .filter-option {
+    .mat-checkbox-checked .mat-checkbox-background {
+      background-color: #1976d2;
+    }
+  
+    .mat-checkbox-disabled .mat-checkbox-background {
+      background-color: #e0e0e0;
+    }
+  }
+  
+  // Animation for filter changes
+  .filter-option {
+    animation: fadeIn 0.2s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-2px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

@@ -1,0 +1,76 @@
+<div class="filter-container">
+  <mat-card class="filter-card">
+    <mat-card-content>
+      <div class="filter-header">
+        <h3>Filter Cycles</h3>
+        @if (hasActiveFilters) {
+          <div class="filter-summary">
+            <mat-chip-set>
+              @for (status of selectedStatuses; track status) {
+                <mat-chip>
+                  {{ getStatusLabel(status) }}
+                  <button matChipRemove (click)="removeStatus(status)">
+                    <mat-icon>cancel</mat-icon>
+                  </button>
+                </mat-chip>
+              }
+            </mat-chip-set>
+          </div>
+        }
+      </div>
+
+      <div class="filter-controls">
+        <!-- Show All Option -->
+        <div class="filter-option show-all" [class.active]="showAll">
+          <mat-checkbox 
+            [(ngModel)]="showAll" 
+            (change)="onShowAllChange()"
+            color="primary">
+            <div class="option-content">
+              <mat-icon>list</mat-icon>
+              <div class="option-text">
+                <span class="label">All Cycles</span>
+                <span class="count">{{ totalCount }}</span>
+              </div>
+            </div>
+          </mat-checkbox>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Individual Status Filters -->
+        <div class="status-filters">
+          @for (option of filterOptions; track option.status) {
+            <div class="filter-option status-option" [class.active]="option.selected">
+              <mat-checkbox 
+                [(ngModel)]="option.selected" 
+                (change)="onStatusChange(option)"
+                [color]="'primary'"
+                [disabled]="showAll">
+                <div class="option-content">
+                  <mat-icon [style.color]="option.color">{{ option.icon }}</mat-icon>
+                  <div class="option-text">
+                    <span class="label">{{ option.label }}</span>
+                    <span class="count" [style.background-color]="option.selected ? option.color : ''">
+                      {{ option.count }}
+                    </span>
+                  </div>
+                </div>
+              </mat-checkbox>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Clear Filters Button -->
+      @if (hasActiveFilters) {
+        <div class="filter-actions">
+          <button mat-stroked-button (click)="clearAllFilters()">
+            <mat-icon>clear</mat-icon>
+            Clear Filters
+          </button>
+        </div>
+      }
+    </mat-card-content>
+  </mat-card>
+</div>

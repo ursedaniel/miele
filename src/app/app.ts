@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CycleListComponent } from './components/cycle-list/cycle-list.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [CycleListComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']
 })
