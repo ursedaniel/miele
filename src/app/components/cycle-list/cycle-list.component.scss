@@ -1,0 +1,126 @@
+.cycle-list-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  
+    h2 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 2rem;
+      font-weight: 400;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  .cycles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+  }
+  
+  .cycle-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    }
+  
+    mat-card-header {
+      .status-chip {
+        margin-left: auto;
+      }
+    }
+  
+    mat-card-actions {
+      padding: 8px 16px 16px 16px;
+      
+      button {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+    }
+  }
+  
+  .status-chip {
+    .status-in-progress {
+      background-color: #2196F3 !important;
+      color: white !important;
+    }
+  
+    .status-completed {
+      background-color: #4CAF50 !important;
+      color: white !important;
+    }
+  
+    .status-cancelled {
+      background-color: #FF9800 !important;
+      color: white !important;
+    }
+  
+    .status-failure {
+      background-color: #F44336 !important;
+      color: white !important;
+    }
+  }
+  
+  .cycle-details {
+    margin-top: 15px;
+  }
+  
+  .detail-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 8px;
+  
+    mat-icon {
+      font-size: 18px;
+      color: #666;
+    }
+  }
+  
+  .invoice-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  
+    h4 {
+      margin: 0 0 10px 0;
+      color: #333;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+  
+  .invoice-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    
+    .price {
+      font-weight: bold;
+      color: #1976d2;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cycles-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .header {
+      flex-direction: column;
+      gap: 15px;
+      align-items: stretch;
+    }
+  }

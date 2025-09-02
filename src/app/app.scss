@@ -1,0 +1,52 @@
+.app-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .app-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+  
+      h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0 0 0.5rem 0;
+        font-size: 2.5rem;
+        color: #1976d2;
+        font-weight: 300;
+  
+        .logo {
+          width: 48px;
+          height: 48px;
+        }
+      }
+  
+      p {
+        margin: 0;
+        color: #666;
+        font-size: 1.1rem;
+      }
+    }
+  }
+  
+  main {
+    padding-top: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .app-header .header-content h1 {
+      font-size: 2rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
